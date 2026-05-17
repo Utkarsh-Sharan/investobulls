@@ -1,13 +1,14 @@
 import { useState } from "react"
+import ScannerPage from "./pages/ScannerPage.jsx"
+import { useTheme } from "./context/ThemeContext.jsx";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const {theme} = useTheme();
 
   return (
-    <div className="bg-gray-100 p-4">
-      <h1>Counter: {count}</h1>
-      <button onClick={() => setCount(count + 1)}>Increment</button>
-    </div>
+    <section className={theme === "dark" ? "dark" : ""}>
+      <ScannerPage />
+    </section>
   )
 }
 
