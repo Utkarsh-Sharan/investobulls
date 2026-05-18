@@ -6,7 +6,7 @@ const StockDetailPage = () => {
   const {symbol} = useParams();
 
   return (
-    <section className="mt-5 flex flex-col items-center">
+    <section className="pt-5 h-screen flex flex-col items-center dark:bg-gray-800 dark:text-white">
         <StockSnapshot symbol={symbol} />
         <ChartPanel symbol={symbol} />
     </section>
