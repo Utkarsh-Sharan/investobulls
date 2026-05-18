@@ -18,7 +18,7 @@ const MatTable = () => {
   }, []);
 
   return (
-    <section className='mt-5 overflow-x-auto overflow-y-auto'>
+    <section className='overflow-x-auto overflow-y-auto'>
         <table className='border-collapse'>
             <thead>
                 <tr className='border-b-2 dark:border-gray-400 cursor-pointer'>
@@ -54,10 +54,10 @@ const MatTable = () => {
                         </td>
                         <td className='px-4 py-2'>
                             <div className='grid grid-cols-2 gap-2'>
-                                <p className='bg-green-300 px-1 rounded-md'>{data.stockMomentumRank}</p>
-                                <p className='bg-green-300 px-1 rounded-md'>{data.stockOutperformanceRank}</p>
-                                <p className='bg-green-300 px-1 rounded-md'>{data.sectorTodayRank}</p>
-                                <p className='bg-green-300 px-1 rounded-md'>{data.sectorMomentumRank}</p>
+                                <p className='bg-green-300 dark:bg-green-500 px-1 rounded-md'>{data.stockMomentumRank}</p>
+                                <p className='bg-green-300 dark:bg-green-500 px-1 rounded-md'>{data.stockOutperformanceRank}</p>
+                                <p className='bg-green-300 dark:bg-green-500 px-1 rounded-md'>{data.sectorTodayRank}</p>
+                                <p className='bg-green-300 dark:bg-green-500 px-1 rounded-md'>{data.sectorMomentumRank}</p>
                             </div>
                         </td>
                         <td className='px-4 py-2'>
