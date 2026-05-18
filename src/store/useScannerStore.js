@@ -1,6 +1,6 @@
 import axios from "axios";
 import { create } from "zustand";
-import { api1, api2 } from "../utils/constants";
+import { fetchOHL, fetchQuotes } from "../services/stockService";
 
 export const useScannerStore = create((set, get) => ({
     ohlData: [],
@@ -8,7 +8,7 @@ export const useScannerStore = create((set, get) => ({
 
     setMatTableData: async () => {
         try {
-            const [apiOne, apiTwo] = await Promise.all([axios.get(api1), axios.get(api2)]);
+            const [apiOne, apiTwo] = await Promise.all([fetchOHL(), fetchQuotes()]);
 
             console.log(apiOne.data, apiTwo.data);
             set({ohlData: apiOne.data, allQuotes: apiTwo.data});
