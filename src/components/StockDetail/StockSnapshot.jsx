@@ -4,6 +4,15 @@ import { fetchSnapshot } from "../../services/stockService.js";
 const StockSnapshot = ({symbol}) => {
   const [snapshotData, setSnapshotData] = useState();
 
+  const calculateOIChangePercentage = () => {
+    const closeOI = snapshotData?.futuresInstrumentData["26-May-2026"].closeOI;
+    const currentOI = snapshotData?.futuresInstrumentData["26-May-2026"].currentOI;
+
+    const oiChange = currentOI - closeOI;
+
+    return ((oiChange / closeOI) * 100).toFixed(2);
+  }
+
   useEffect(() => {
     const onLoadHandler = async () => {
         try {
@@ -63,7 +72,7 @@ const StockSnapshot = ({symbol}) => {
         </div>
         <div>
             <p className="text-gray-400">OI CH</p>
-            <p>{snapshotData?.pe}</p>
+            <p>{calculateOIChangePercentage()}</p>
         </div>
     </section>
   )
