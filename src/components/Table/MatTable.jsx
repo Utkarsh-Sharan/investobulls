@@ -3,9 +3,15 @@ import React, { useEffect } from 'react'
 import { useScannerStore } from '../../store/useScannerStore';
 import RangeBar from '../Bar/RangeBar';
 import DeviationBar from '../Bar/DeviationBar';
+import { useNavigate } from 'react-router-dom';
 
 const MatTable = () => {
   const {setMatTableData, ohlData} = useScannerStore();
+  const navigate = useNavigate();
+
+  const handleClick = (symbol) => {
+    navigate(`/stock/${symbol}`);
+  }
 
   useEffect(() => {
     setMatTableData();
@@ -15,7 +21,7 @@ const MatTable = () => {
     <section className='mt-5 overflow-x-auto overflow-y-auto'>
         <table className='border-collapse'>
             <thead>
-                <tr className='border-b-2 dark:border-gray-400'>
+                <tr className='border-b-2 dark:border-gray-400 cursor-pointer'>
                     <th className='px-4 py-2'>SYMBOL</th>
                     <th className='px-4 py-2'>LTP</th>
                     <th className='px-4 py-2'>Momentum</th>
@@ -31,7 +37,8 @@ const MatTable = () => {
                 ohlData.map((data) => (
                     <tr 
                         key={data.symbol} 
-                        className='border-b-2 dark:border-gray-400'
+                        className='border-b-2 dark:border-gray-400 cursor-pointer'
+                        onClick={() => handleClick(data.symbol)}
                     >
                         <td className='px-4 py-2'>
                             <div className='flex items-center gap-2'>
