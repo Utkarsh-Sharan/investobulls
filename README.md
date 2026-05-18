@@ -1,16 +1,54 @@
-# React + Vite
+# InvestoBulls Screener
+A modern stock screener application built with React and TailwindCSS. It helps traders and investors quickly analyze stock data, visualize key metrics, and navigate to detailed stock snapshots.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🚀 Features
+- Stock Screener Table  
+Displays essential trading metrics:
 
-Currently, two official plugins are available:
+  - Deviation from pivots
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+  - Today’s range
 
-## React Compiler
+  - Last trade price (LTP)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+  - Open–High–Low (OHL)
 
-## Expanding the ESLint configuration
+  - Momentum indicators
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Interactive Navigation  
+Clicking on a row takes the user to a stock detail page, showing a snapshot of the selected stock.
+
+- Responsive UI  
+Built with TailwindCSS for a clean, mobile‑friendly interface.
+
+- Data Fetching  
+Uses axios to fetch live stock data from APIs.
+
+- Global State Management  
+Powered by React Context API for managing screener state across components.
+
+## 🛠️ Tech Stack
+- React – Component‑based frontend framework
+
+- TailwindCSS – Utility‑first CSS styling
+
+- axios – API data fetching
+
+- Context API – Lightweight global state management
+
+## 📸 Screens
+- Screener Table View – Quick overview of multiple stocks
+
+- Stock Detail Page – Snapshot view with detailed metrics
+
+## ⚡ Setup
+```
+Clone the repository:
+git clone https://github.com/Utkarsh-Sharan/investobulls.git
+
+Install dependencies:
+npm install
+
+Start the development server:
+npm run dev
+```
