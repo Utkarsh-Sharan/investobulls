@@ -10,7 +10,6 @@ export const useScannerStore = create((set, get) => ({
         try {
             const [apiOne, apiTwo] = await Promise.all([fetchOHL(), fetchQuotes()]);
 
-            console.log(apiOne.data, apiTwo.data);
             set({ohlData: apiOne.data, allQuotes: apiTwo.data});
         } catch (error) {
             console.log(error?.message);

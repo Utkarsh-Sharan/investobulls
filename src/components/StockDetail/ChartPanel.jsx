@@ -6,13 +6,13 @@ const ChartPanel = ({symbol}) => {
 
   useEffect(() => {
     const fetchData = async () => {
-        try {
-            const res = await fetchChart(symbol, "1D");
-            
-            console.log(res);
-        } catch (error) {
-            console.error("Error fetching chart data!", error);
-        }
+      try {
+        const res = await fetchChart(symbol, "1D");
+        
+        console.log(res);
+      } catch (error) {
+        console.error("Error fetching chart data!", error);
+      }
     }
 
     fetchData();
